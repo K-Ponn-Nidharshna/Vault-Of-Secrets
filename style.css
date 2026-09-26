@@ -1,0 +1,456 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;600;700&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background: #020a02;
+  color: #00ff41;
+  font-family: 'Share Tech Mono', monospace;
+  min-height: 100vh;
+}
+
+/* MATRIX BACKGROUND */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0,255,65,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,255,65,0.03) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* HEADER */
+header {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 1px solid #003b00;
+  background: #010801;
+  position: relative;
+  z-index: 1;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.lock { font-size: 2.5rem; }
+
+h1 {
+  font-family: 'Orbitron', monospace;
+  font-size: 1.8rem;
+  color: #00cc33;
+  letter-spacing: 0.1em;
+  text-shadow: 0 0 20px rgba(0,255,65,0.3);
+}
+
+.green { color: #00ff41; }
+
+.tagline {
+  font-size: 0.75rem;
+  color: #005500;
+  letter-spacing: 0.2em;
+}
+
+/* TABS */
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  background: #010801;
+  border-bottom: 1px solid #003b00;
+  position: relative;
+  z-index: 1;
+}
+
+.tab {
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  color: #005500;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.75rem;
+  padding: 16px 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  letter-spacing: 0.1em;
+  width: auto;
+  margin: 0;
+  border-radius: 0;
+}
+
+.tab:hover {
+  color: #00cc33;
+  background: rgba(0,255,65,0.05);
+}
+
+.tab.active {
+  color: #00ff41;
+  border-bottom-color: #00ff41;
+  background: rgba(0,255,65,0.08);
+}
+
+/* TAB CONTENT */
+.tab-content {
+  display: none;
+  max-width: 700px;
+  margin: 30px auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.tab-content.active { display: block; }
+
+/* PANEL */
+.panel {
+  background: #010d01;
+  border: 1px solid #003b00;
+  border-radius: 8px;
+  padding: 28px;
+}
+
+.panel h2 {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.9rem;
+  color: #00ff41;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+
+.panel-sub {
+  font-size: 0.78rem;
+  color: #005500;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+}
+
+/* GENERATED PASSWORD */
+.generated-password {
+  background: #020a02;
+  border: 1px solid #00ff41;
+  border-radius: 6px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  min-height: 56px;
+}
+
+#generatedPwd {
+  font-size: 1.1rem;
+  color: #00ff41;
+  letter-spacing: 0.1em;
+  word-break: break-all;
+  flex: 1;
+  text-shadow: 0 0 10px rgba(0,255,65,0.4);
+}
+
+/* OPTIONS */
+.options { margin-bottom: 20px; }
+
+.option-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  font-size: 0.85rem;
+  color: #00cc33;
+}
+
+input[type="range"] {
+  width: 60%;
+  accent-color: #00ff41;
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+
+.checkboxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.82rem;
+  color: #00cc33;
+  cursor: pointer;
+}
+
+input[type="checkbox"] {
+  accent-color: #00ff41;
+  width: 14px;
+  height: 14px;
+  border: none;
+  padding: 0;
+  flex: unset;
+  background: transparent;
+}
+
+/* BUTTONS */
+.main-btn {
+  width: 100%;
+  padding: 14px;
+  background: transparent;
+  border: 1px solid #00ff41;
+  color: #00ff41;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 16px;
+}
+
+.main-btn:hover {
+  background: rgba(0,255,65,0.1);
+  box-shadow: 0 0 20px rgba(0,255,65,0.2);
+}
+
+.save-btn {
+  width: 100%;
+  padding: 12px;
+  background: transparent;
+  border: 1px solid #005500;
+  color: #005500;
+  font-family: 'Orbitron', monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: 10px;
+}
+
+.save-btn:hover {
+  border-color: #00cc33;
+  color: #00cc33;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 1px solid #003b00;
+  color: #00cc33;
+  padding: 8px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 1rem;
+  width: auto;
+  margin: 0;
+}
+
+.icon-btn:hover {
+  border-color: #00ff41;
+  background: rgba(0,255,65,0.1);
+}
+
+#genStatus {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #005500;
+  margin-top: 10px;
+  min-height: 18px;
+}
+
+/* VAULT INPUT */
+.vault-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  background: #020a02;
+  border: 1px solid #003b00;
+  border-radius: 6px;
+  color: #00ff41;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.88rem;
+  padding: 12px 16px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #00ff41;
+}
+
+input::placeholder { color: #003b00; }
+
+.pwd-input-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.pwd-input-row input { flex: 1; }
+
+/* VAULT LIST */
+.vault-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.empty-msg {
+  text-align: center;
+  color: #003b00;
+  font-size: 0.85rem;
+  padding: 20px;
+}
+
+.vault-item {
+  background: #020a02;
+  border: 1px solid #003b00;
+  border-radius: 6px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+
+.vault-item:hover { border-color: #00cc33; }
+
+.vault-item-info { flex: 1; }
+
+.vault-site {
+  font-size: 0.9rem;
+  color: #00ff41;
+  margin-bottom: 4px;
+}
+
+.vault-user {
+  font-size: 0.75rem;
+  color: #005500;
+}
+
+.vault-pwd {
+  font-size: 0.85rem;
+  color: #00cc33;
+  letter-spacing: 0.05em;
+  margin-top: 4px;
+  word-break: break-all;
+}
+
+.vault-actions {
+  display: flex;
+  gap: 6px;
+}
+
+/* STRENGTH BAR */
+.strength-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.strength-track {
+  flex: 1;
+  height: 8px;
+  background: #003b00;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.strength-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: #00ff41;
+  transition: width 0.5s ease, background 0.3s;
+  width: 0%;
+}
+
+#strengthLabel {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.75rem;
+  min-width: 80px;
+  text-align: right;
+  color: #00ff41;
+}
+
+/* SECURITY REPORT */
+.security-report {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.report-card {
+  background: #020a02;
+  border: 1px solid #003b00;
+  border-radius: 6px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: border-color 0.2s;
+}
+
+.report-card.pass { border-color: #00cc33; }
+.report-card.fail { border-color: #cc0000; }
+
+.report-icon { font-size: 1.1rem; }
+
+.report-text {
+  font-size: 0.78rem;
+  color: #00cc33;
+}
+
+/* AI ANALYSIS */
+.ai-analysis {
+  background: #020a02;
+  border: 1px solid #003b00;
+  border-radius: 6px;
+  padding: 16px;
+  margin-top: 10px;
+}
+
+.ai-analysis h3 {
+  font-family: 'Orbitron', monospace;
+  font-size: 0.78rem;
+  color: #00ff41;
+  letter-spacing: 0.1em;
+  margin-bottom: 10px;
+}
+
+#aiText {
+  font-size: 0.85rem;
+  color: #00cc33;
+  line-height: 1.7;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: #010d01; }
+::-webkit-scrollbar-thumb { background: #003b00; border-radius: 2px; }
+
+/* MOBILE */
+@media (max-width: 500px) {
+  h1 { font-size: 1.2rem; }
+  .tab { padding: 12px 16px; font-size: 0.65rem; }
+  .security-report { grid-template-columns: 1fr; }
+  .checkboxes { grid-template-columns: 1fr; }
+}
